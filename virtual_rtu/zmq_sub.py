@@ -6,7 +6,7 @@ def main():
     context = zmq.Context()
 
     socket = context.socket(zmq.SUB)
-    socket.connect("tcp://127.0.0.1:55556")
+    socket.bind("tcp://*:55556")
     socket.setsockopt_string(zmq.SUBSCRIBE, "control")
 
     while True:
